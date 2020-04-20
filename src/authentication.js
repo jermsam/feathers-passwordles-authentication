@@ -8,14 +8,16 @@ class PasswordlessStrategy extends AuthenticationBaseStrategy {
   async authenticate(authentication, ) {
 
     if(!authentication.token) {
+
       let email;
       // check if user with email (& or phone) exists
-      const {data} = await this.app.service('users').find({
+      const {total,data} = await this.app.service('users').find({
         query:{
           email:authentication.email
         }
       });
-      email=data[0].email;
+
+      if(total>0) email=data[0].email;
 
       // if not create one
       if(!email){
