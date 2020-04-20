@@ -1,0 +1,50 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "entity": "user",
+    "service": "users",
+    "secret": "p3/Jk6GRuxSM630dVRmyVRZh/cY=",
+    "authStrategies": [
+      "jwt",
+      "passwordless"
+    ],
+    "jwtOptions": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "passwordless": {
+      "usernameField": "email",
+      "passwordField": "email"
+    }
+  },
+  "postgres": {
+    "host":"host",
+    "port":"port",
+    "username":"user",
+    "password":"pwd",
+    "database":"db"
+  },
+  "weatherApi":"WOMAPI",
+  "gmail":{
+      "user":"XUSER",
+      "clientId":"XCLIENT_ID",
+      "clientSecret":"XCLIENT_SECRET",
+      "refreshToken":"XREFRESH_TOKEN"
+  },
+  "twilio": {
+    "accountSid": "ACCOUNT_SID",
+    "authToken": "AUTH_TOCKEN",
+    "from": "PHONE"
+  }
+}

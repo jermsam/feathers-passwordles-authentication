@@ -1,0 +1,42 @@
+/* eslint-disable no-unused-vars */
+const { sendMyMail } = require('./mailer.js');
+
+exports.Mailer = class Mailer {
+  constructor (options) {
+    this.options = options || {};
+  }
+
+  async find (params) {
+    return [];
+  }
+
+  async get (id, params) {
+    return {
+      id, text: `A new message with ID: ${id}!`
+    };
+  }
+
+  async create (data, params) {
+    if (Array.isArray(data)) {
+      return Promise.all(data.map(current => this.create(current, params)));
+    }
+    const { gmail} = this.options;
+
+    // console.log (gmailer);
+
+    await sendMyMail(gmail, data);
+    return data;
+  }
+
+  async update (id, data, params) {
+    return data;
+  }
+
+  async patch (id, data, params) {
+    return data;
+  }
+
+  async remove (id, params) {
+    return { id };
+  }
+};
