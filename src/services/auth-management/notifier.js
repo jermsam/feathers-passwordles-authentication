@@ -16,7 +16,7 @@ const makeTemplate=(from,to,subject,content)=>({
 
 module.exports = app => {
   const support = app.get('gmail');
-  const from = `BZoe Welcome <${support.user}>`;
+  const from = `Welcome <${support.user}>`;
 
 
   /**
@@ -62,8 +62,6 @@ module.exports = app => {
    * you need to make sure they are inserted as a value in the html key in the email object.
    */
 
-
-
   const notifier = (type, user) => {
     let shortToken;
     let token;
@@ -73,15 +71,15 @@ module.exports = app => {
     const { email, resetShortToken, // phone
     } = user;
     const to =email;
-    const subject = 'Support ticket - B\'Zoe Home Care';
-    console.log(user);
+    const subject = 'Find your Profile Access Token';
+    // console.log(user);
     switch (type) {
 
     case 'sendResetPwd': // inform that user's email is now confirmed
       // tokenLink = getLink('reset',email, resetToken,);
       token = resetShortToken;
       shortToken = getSmsToken(token);
-      content = `Your Support Ticket is ${getSmsToken(shortToken)}`;
+      content = `Access your profile using this token: ${getSmsToken(shortToken)}`;
       mail = makeTemplate(from,to, subject, content);
       /*sms = {
         to: phone,
@@ -92,9 +90,6 @@ module.exports = app => {
     default:
       break;
     }
-
-
-
 
   };
 

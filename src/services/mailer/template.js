@@ -62,8 +62,7 @@ border-radius: 50%;
 Greetings,
 </p>
 <h2 style="font-size:2vw; font-family: Arial, Helvetica, sans-serif;">
-<img src="https://bzoe.herokuapp.com/imgs/xx.png" alt="Avatar" style="width:50px">
-B'Zoe Lead</h2>
+
      {{content}}
 <p style="font-size:1vw; font-family: Arial, Helvetica, sans-serif;">
 Regards,<br/>

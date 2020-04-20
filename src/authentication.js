@@ -33,13 +33,13 @@ class PasswordlessStrategy extends AuthenticationBaseStrategy {
           }
         });
       }
-      console.log('now use this to play the gem ',email);
+      // console.log('now use this to play the gem ',email);
       // use their email (& or phone) address from database to generate a password reset code
       const res = await this.app.service('authManagement').create({
         action:'sendResetPwd',
         value:{email}
       });
-      console.log('token sent ',res);
+      // console.log('token sent ',res);
       // send it to them via their email (& or phone) address
       return {
         accessToken:null,
@@ -48,7 +48,7 @@ class PasswordlessStrategy extends AuthenticationBaseStrategy {
     }
     //when they return the code check if their email and code
     const {email,token}=authentication;
-    console.log(authentication);
+    // console.log(authentication);
     // match by running a resetPwdShort if they do, authenticate
     // if it expired say so and prompt them to retry
     // if invalid do the same

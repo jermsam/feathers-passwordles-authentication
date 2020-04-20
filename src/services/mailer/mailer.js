@@ -53,8 +53,8 @@ module.exports = {
           rejectUnauthorized: false, // do away with sendmail error : self signed certificate
         },
       });
-      return smtpTransport.sendMail(mailOptions, (error, response) => {
-        error ? console.log(error) : console.log(response);
+      return smtpTransport.sendMail(mailOptions, (error, ) => {
+        error && console.log(error);
         smtpTransport.close();
       });
     } catch ({ message }) {
