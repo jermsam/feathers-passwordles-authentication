@@ -31,7 +31,7 @@
   "postgres": {
     "host":"host",
     "port":"port",
-    "username":"user",
+    "username":"username",
     "password":"pwd",
     "database":"db"
   },
