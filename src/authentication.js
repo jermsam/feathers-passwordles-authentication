@@ -24,14 +24,6 @@ class PasswordlessStrategy extends AuthenticationBaseStrategy {
         let  newUser = await this.app.service('users').create({email:authentication.email});
         // verify this jama:
         email=newUser.email;
-        const token=newUser.verifyShortToken;
-        newUser = await this.app.service('authManagement').create({
-          action:'verifySignupShort',
-          value:{
-            user:{email},
-            token
-          }
-        });
       }
       // console.log('now use this to play the gem ',email);
       // use their email (& or phone) address from database to generate a password reset code

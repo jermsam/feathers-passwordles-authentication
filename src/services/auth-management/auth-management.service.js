@@ -14,7 +14,7 @@ module.exports = function (app) {
   // Initialize our service with any options it requires
   app.configure(authManagement({
     notifier:notifierObj.notifier,
-    // skipIsVerifiedCheck: true,
+    skipIsVerifiedCheck: true,
     sanitizeUserForClient,
     shortTokenLen:4,
   }));
