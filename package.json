@@ -60,7 +60,7 @@
     "handlebars": "^4.7.6",
     "helmet": "^3.21.2",
     "hubspot": "^2.3.10",
-    "nodemailer": "^6.4.6",
+    "nodemailer": "^6.4.16",
     "pg": "^8.0.2",
     "sequelize": "^5.21.4",
     "serve-favicon": "^2.5.0",
